@@ -17,19 +17,28 @@ ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provi
 
 ---
 
-## 🔗 Links
-
 ### 🔗 Live Demo
-<!-- Placeholder for Live Demo Link -->
 
-### 🎥 Demo Video
-<div align="center">
-  <video src="assets/video.mp4" controls width="80%"></video>
-</div>
+<!-- Placeholder for Live Demo Link -->
 
 ---
 
 ## 📸 Visual Showcase
+
+
+## 🎥 Demo Video
+
+<div align="center">
+
+<a href="https://raw.githubusercontent.com/rukeshsg/ShopMatrix-E-Commerce-website/main/assets/video.mp4">
+  <img src="assets/screenshots/home.png" width="80%" />
+</a>
+
+<p><b>▶️ Click image to watch demo</b></p>
+
+</div>
+
+---
 
 ### 🏠 Home Page
 <div align="center">
@@ -53,7 +62,6 @@ ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provi
   <img src="assets/screenshots/categories.png" width="40%" alt="Categories" />
 </div>
 
----
 
 ## ✨ Key Features
 
