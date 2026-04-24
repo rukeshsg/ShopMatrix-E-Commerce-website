@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  const { logout, isAuthenticated } = useAuthStore();
+  const { logout, isAuthenticated, user } = useAuthStore();
   const cartItems = useCartStore((state) => state.cartItems);
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
@@ -84,6 +84,7 @@ const Navbar = () => {
           <nav className="navbar-links">
             <Link to="/" className="nav-link">Products</Link>
             <Link to="/categories" className="nav-link">Categories</Link>
+            {user?.role === 'admin' && <Link to="/admin/products" className="nav-link">Admin</Link>}
           </nav>
 
           <div className="navbar-actions">

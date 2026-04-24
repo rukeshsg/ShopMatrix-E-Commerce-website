@@ -1,7 +1,19 @@
-<<<<<<< HEAD
-# ShopMatrix 💎
 
-ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provide a seamless and elegant shopping experience. Built with the **MERN Stack**, it features a sophisticated UI, secure authentication, and robust product management.
+# 🛒 ShopMatrix – Premium E-Commerce Platform
+
+![React](https://img.shields.io/badge/Frontend-React-black?style=for-the-badge&logo=react)
+![Node](https://img.shields.io/badge/Backend-Node.js-black?style=for-the-badge&logo=node.js)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-black?style=for-the-badge&logo=mongodb)
+![JWT](https://img.shields.io/badge/Auth-JWT-black?style=for-the-badge&logo=jsonwebtokens)
+![Zustand](https://img.shields.io/badge/State-Zustand-black?style=for-the-badge)
+![CSS](https://img.shields.io/badge/UI-CSS3-black?style=for-the-badge&logo=css3)
+
+![MERN](https://img.shields.io/badge/Stack-MERN-DAA520?style=for-the-badge)
+![Fullstack](https://img.shields.io/badge/Type-Fullstack-DAA520?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Production--Ready-DAA520?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-DAA520?style=for-the-badge)
+
+ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provide a seamless and elegant shopping experience. Built with the **MERN Stack**, it features a sophisticated UI, secure authentication, and a robust administrative system for business management.
 
 ---
 
@@ -10,66 +22,66 @@ ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provi
 ### 🔗 Live Demo
 <!-- Placeholder for Live Demo Link -->
 
-
 ### 🎥 Demo Video
-<!-- Placeholder for Demo Video Link -->
-
-
-### 📸 Screenshots
-<!-- Placeholder for Screenshots -->
-
+<div align="center">
+  <video src="assets/video.mp4" controls width="80%"></video>
+</div>
 
 ---
 
-## ✨ Features
+## 📸 Visual Showcase
 
--   🔐 **Secure Authentication**: JWT-based auth with HttpOnly cookies, access/refresh token rotation, and secure password hashing.
--   🛍️ **Dynamic Catalog**: Real-time product search, category filtering (Electronics, Fashion, Home & Garden, etc.), and detailed product views.
--   👤 **User Dashboard**: Comprehensive settings for profile management, security (password change), and order history.
--   🛒 **Shopping Experience**: Fully functional cart system with optimistic UI updates.
--   🎨 **Premium UI/UX**: Modern, responsive design with support for Light and Dark modes, custom SVG branding, and smooth animations.
--   📧 **Email Integration**: Automated email notifications for account activities using Nodemailer.
+### 🏠 Home Page
+<div align="center">
+  <img src="assets/home.png" width="80%" alt="Home Page" />
+</div>
+
+### 🎨 Admin Management Dashboard
+<div align="center">
+  <img src="assets/screenshots/admin.png" width="80%" alt="Admin Dashboard" />
+</div>
+
+### 🛒 Shopping Cart & Checkout
+<div align="center">
+  <img src="assets/cart.png" width="40%" alt="Cart" />
+  <img src="assets/screenshots/checkout.png" width="40%" alt="Checkout" />
+</div>
+
+### ⚙️ User Settings & 📂 Categories
+<div align="center">
+  <img src="assets/settings.png" width="40%" alt="Settings" />
+  <img src="assets/categories.png" width="40%" alt="Categories" />
+</div>
+
+---
+
+## ✨ Key Features
+
+-   🔐 **Advanced Authentication**: JWT-based auth with HttpOnly cookies, access/refresh token rotation, and multi-layered route protection.
+-   🛠️ **Powerful Admin Suite**: Comprehensive dashboard to Add, Edit, and Delete products, track inventory value, and monitor low-stock levels with visual progress bars.
+-   🛍️ **Dynamic Shopping**: Real-time product search, category filtering, and an optimistic UI cart system.
+-   👤 **Personalized Experience**: User dashboard for profile management, security settings (password updates), and order tracking.
+-   🎨 **Luxury UI/UX**: Professional design supporting both **Light & Dark modes**, custom SVG branding, and high-quality local asset serving.
+-   📧 **Email Notifications**: Integrated Nodemailer system for account verification and security alerts.
 
 ---
 
 ## 🚀 Tech Stack
 
 **Frontend:**
--   [React.js](https://reactjs.org/) (Vite)
--   [Zustand](https://github.com/pmndrs/zustand) (State Management)
--   [React Router](https://reactrouter.com/)
--   [Axios](https://axios-http.com/)
--   [Lucide React](https://lucide.dev/) (Icons)
--   [Sonner](https://sonner.emilkowal.ski/) (Toasts)
+-   **React 19** (Vite)
+-   **Zustand** (Ultra-fast State Management)
+-   **React Router 7**
+-   **Lucide React** (Premium Icons)
+-   **Sonner** (Modern Toasts)
+-   **Axios** (API Interceptors)
 
 **Backend:**
--   [Node.js](https://nodejs.org/) & [Express.js](https://expressjs.com/)
--   [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
--   [JSON Web Token](https://jwt.io/) (Authentication)
--   [Nodemailer](https://nodemailer.com/) (Email Service)
--   [Helmet](https://helmetjs.github.io/) & [Rate Limit](https://www.npmjs.com/package/express-rate-limit) (Security)
-
----
-
-## 📁 Project Structure
-
-```text
-shopmatrix-fullstack/
-├── backend/                # Express API, MongoDB models, controllers
-│   ├── config/             # Database & global configs
-│   ├── controllers/        # Business logic for routes
-│   ├── middleware/         # Auth & error handling
-│   ├── models/             # Mongoose schemas
-│   └── routes/             # API endpoints
-├── frontend/               # React application (Vite)
-│   ├── src/
-│   │   ├── api/            # Axios instance & interceptors
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Full page views
-│   │   ├── store/          # Zustand state management
-│   │   └── utils/          # Helper functions
-└── package.json            # Root configuration for workspace
-```
+-   **Node.js & Express.js**
+-   **MongoDB & Mongoose** (ODM)
+-   **Bcrypt.js** (Secure Hashing)
+-   **Express Rate Limit & Helmet** (Production Security)
+-   **Nodemailer** (Email Services)
 
 ---
 
@@ -81,12 +93,8 @@ git clone https://github.com/your-username/shopmatrix.git
 cd shopmatrix
 ```
 
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-```
-Create a `.env` file in the `backend` folder based on `.env.example`:
+### 2. Environment Configuration
+Create a `.env` file in the `backend/` folder:
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
@@ -96,32 +104,21 @@ SMTP_EMAIL=your_email
 SMTP_PASSWORD=your_app_password
 ```
 
-### 3. Frontend Setup
+### 3. Quick Start (Concurrently)
+From the root directory:
 ```bash
-cd ../frontend
-npm install
-```
-Create a `.env` file in the `frontend` folder:
-```env
-VITE_API_URL=http://localhost:5000/api
+npm install           # Install root dependencies
+npm run install-all   # Install frontend & backend dependencies
+npm run seed          # Populate with premium product data
+npm run dev           # Start both servers
 ```
 
 ---
 
-## 🏃 Usage
-
-### Run in Development
-From the root directory:
-```bash
-npm run dev
-```
-This will start both the backend server (port 5000) and the frontend (port 5173) concurrently.
-
-### Seed Database
-To populate the database with initial products:
-```bash
-npm run seed
-```
+## 🔑 Admin Access (Test Account)
+To test the administrative features:
+-   **Email**: `admin@example.com`
+-   **Password**: `password123`
 
 ---
 
@@ -129,24 +126,12 @@ npm run seed
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `POST` | `/api/auth/register` | Register a new user |
-| `POST` | `/api/auth/login` | Authenticate user & get token |
-| `GET` | `/api/products` | Fetch all products (with search/filter) |
-| `GET` | `/api/products/:id` | Get detailed product info |
-| `PUT` | `/api/users/profile` | Update user profile (Protected) |
+| `POST` | `/api/auth/login` | Login & receive secure cookies |
+| `GET` | `/api/products` | Search & Filter catalog |
+| `POST` | `/api/products` | Create new product (Admin Only) |
+| `PUT` | `/api/products/:id` | Edit inventory item (Admin Only) |
+| `DELETE` | `/api/products/:id` | Remove product (Admin Only) |
 
 ---
 
-## 🚧 Future Improvements
--   [ ] Stripe/Razorpay Payment Integration
--   [ ] Admin Dashboard for Product Management
--   [ ] Order Tracking System
--   [ ] Product Reviews & Ratings
-
----
-
-Made with ❤️ by [Your Name]
-=======
-# ShopMatrix-E-Commerce-website-
-ShopMatrix is a professional, full-stack luxury e-commerce platform built with the MERN stack. Features include secure JWT authentication, a dynamic product catalog with search/filtering, shopping cart management, user settings dashboard, and a premium, responsive UI/UX.
->>>>>>> ed4edca5dacb877804bf5ea2798109898d616e20
+Made with ❤️ by [Rukesh S G]

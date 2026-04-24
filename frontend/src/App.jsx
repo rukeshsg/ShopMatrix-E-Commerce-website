@@ -11,9 +11,15 @@ import Categories from './pages/Categories';
 import ProductDetails from './pages/ProductDetails';
 import Settings from './pages/Settings';
 import ProtectedRoute from './components/layout/ProtectedRoute';
+import AdminRoute from './components/layout/AdminRoute';
+import AdminProducts from './pages/admin/AdminProducts';
 
-// Placeholder Pages
-const NotFound = () => <div className="container" style={{ padding: '2rem 1rem' }}><h1>404 - Not Found</h1></div>;
+const NotFound = () => (
+  <div className="container" style={{ padding: '5rem 1rem', textAlign: 'center' }}>
+    <h1 style={{ fontSize: '3rem', color: 'var(--primary-color)' }}>404</h1>
+    <p style={{ color: 'var(--text-muted)' }}>The page you are looking for does not exist.</p>
+  </div>
+);
 
 function App() {
   return (
@@ -29,16 +35,26 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart />} />
+            
             <Route path="/checkout" element={
               <ProtectedRoute>
                 <Checkout />
               </ProtectedRoute>
             } />
+            
             <Route path="/settings" element={
               <ProtectedRoute>
                 <Settings />
               </ProtectedRoute>
             } />
+
+            {/* Admin Routes */}
+            <Route path="/admin/products" element={
+              <AdminRoute>
+                <AdminProducts />
+              </AdminRoute>
+            } />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

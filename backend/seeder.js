@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import User from './models/User.js';
 import Product from './models/Product.js';
@@ -61,18 +62,22 @@ const importData = async () => {
     await User.deleteMany();
     await Cart.deleteMany();
 
+    const salt = await bcrypt.genSalt(10);
+    const adminPassword = await bcrypt.hash('password123', salt);
+    const guestPassword = await bcrypt.hash('password123', salt);
+
     const createdUsers = await User.insertMany([
       {
         name: 'Admin User',
         email: 'admin@example.com',
-        password: 'password123',
+        password: adminPassword,
         role: 'admin',
         isVerified: true,
       },
       {
         name: 'Guest User',
         email: 'guest@example.com',
-        password: 'password123',
+        password: guestPassword,
         role: 'user',
         isVerified: true,
       },
