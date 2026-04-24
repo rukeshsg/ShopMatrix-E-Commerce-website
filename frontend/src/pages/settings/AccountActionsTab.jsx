@@ -3,7 +3,7 @@ import { useAuthStore } from '../../store/authStore';
 import { LogOut, AlertTriangle, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
-import api from '../../api/axios';
+import api from '../../utils/api';
 
 const AccountActionsTab = () => {
   const { logout } = useAuthStore();
@@ -23,7 +23,7 @@ const AccountActionsTab = () => {
     
     setLoading(true);
     try {
-      await api.delete('/users/account', { data: { password } });
+      await api.delete('/api/users/account', { data: { password } });
       toast.success('Your account has been deleted.');
       logout();
       navigate('/');

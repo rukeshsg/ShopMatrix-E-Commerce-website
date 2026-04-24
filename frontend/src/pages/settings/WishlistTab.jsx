@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../api/axios';
+import api from '../../utils/api';
 import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ const WishlistTab = () => {
 
   const fetchWishlist = async () => {
     try {
-      const res = await api.get('/users/wishlist');
+      const res = await api.get('/api/users/wishlist');
       setWishlist(res.data.data.wishlist);
     } catch (error) {
       toast.error('Failed to load wishlist');
@@ -27,7 +27,7 @@ const WishlistTab = () => {
 
   const handleRemove = async (productId) => {
     try {
-      await api.post('/users/wishlist', { productId });
+      await api.post('/api/users/wishlist', { productId });
       setWishlist(wishlist.filter(item => item._id !== productId));
       toast.success('Removed from wishlist');
     } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../../api/axios';
+import api from '../../utils/api';
 import { toast } from 'sonner';
 import { useAuthStore } from '../../store/authStore';
 
@@ -27,7 +27,7 @@ const SecurityTab = () => {
 
     setLoading(true);
     try {
-      await api.put('/users/password', {
+      await api.put('/api/users/password', {
         currentPassword: passwords.currentPassword,
         newPassword: passwords.newPassword
       });

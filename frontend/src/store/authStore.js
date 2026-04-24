@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import api from '../api/axios';
+import api from '../utils/api';
 import { toast } from 'sonner';
 
 export const useAuthStore = create(
@@ -16,7 +16,7 @@ export const useAuthStore = create(
       login: async (email, password) => {
         set({ isLoading: true });
         try {
-          const res = await api.post('/auth/login', { email, password });
+          const res = await api.post('/api/auth/login', { email, password });
           set({
             user: res.data.data.user,
             accessToken: res.data.data.accessToken,
@@ -35,7 +35,7 @@ export const useAuthStore = create(
       register: async (name, email, password) => {
         set({ isLoading: true });
         try {
-          const res = await api.post('/auth/register', { name, email, password });
+          const res = await api.post('/api/auth/register', { name, email, password });
           set({
             user: res.data.data.user,
             accessToken: res.data.data.accessToken,
@@ -53,7 +53,7 @@ export const useAuthStore = create(
 
       logout: async () => {
         try {
-          await api.post('/auth/logout');
+          await api.post('/api/auth/logout');
         } catch (error) {
           console.error('Logout failed', error);
         } finally {

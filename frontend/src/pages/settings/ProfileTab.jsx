@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthStore } from '../../store/authStore';
 import { toast } from 'sonner';
-import api from '../../api/axios';
+import api from '../../utils/api';
 
 const ProfileTab = ({ user }) => {
   const { updateUser } = useAuthStore();
@@ -19,7 +19,7 @@ const ProfileTab = ({ user }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await api.put('/users/profile', formData);
+      const res = await api.put('/api/users/profile', formData);
       updateUser(res.data.data.user);
       toast.success('Profile updated successfully');
     } catch (error) {

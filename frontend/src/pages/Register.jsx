@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import api from '../api/axios';
+import api from '../utils/api';
 import { toast } from 'sonner';
 
 const Register = () => {
@@ -26,7 +26,7 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.post('/auth/register', { name, email, password });
+      await api.post('/api/auth/register', { name, email, password });
       setOtpSent(true);
       toast.success('OTP sent to your email!');
     } catch (error) {
@@ -40,7 +40,7 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.post('/auth/verify-otp', { email, otp: otpCode });
+      await api.post('/api/auth/verify-otp', { email, otp: otpCode });
       toast.success('Registration successful!');
       await login(email, password);
     } catch (error) {

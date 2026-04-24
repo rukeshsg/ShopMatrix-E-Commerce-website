@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/authStore';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const api = axios.create({
-  baseURL: API_URL,
-  withCredentials: true // send cookies
+  baseURL: API_BASE_URL,
+  withCredentials: true
 });
 
 // Request interceptor to attach access token
@@ -27,7 +27,7 @@ api.interceptors.response.use(
     const originalRequest = error.config;
 
     // Do not intercept refresh or logout requests to prevent infinite loops
-    if (originalRequest.url.includes('/auth/refresh') || originalRequest.url.includes('/auth/logout')) {
+    if (originalRequest.url.includes('/api/auth/refresh') || originalRequest.url.includes('/api/auth/logout')) {
       return Promise.reject(error);
     }
 
@@ -35,7 +35,7 @@ api.interceptors.response.use(
       originalRequest._retry = true;
       try {
         // Attempt to refresh the token using httpOnly cookie
-        const res = await axios.post(`${API_URL}/auth/refresh`, {}, { withCredentials: true });
+        const res = await axios.post(`${API_BASE_URL}/api/auth/refresh`, {}, { withCredentials: true });
         
         const newAccessToken = res.data.data.accessToken;
         
@@ -46,7 +46,7 @@ api.interceptors.response.use(
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
         return api(originalRequest);
       } catch (refreshError) {
-        // If refresh fails, silently clear local auth state without calling logout API
+        // If refresh fails, silently clear local auth state
         useAuthStore.getState().setAccessToken(null);
         useAuthStore.setState({ user: null, isAuthenticated: false });
         return Promise.reject(refreshError);

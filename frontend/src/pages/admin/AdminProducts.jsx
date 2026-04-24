@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Search, Package, AlertCircle, BarChart3, TrendingUp, Inbox } from 'lucide-react';
 import { toast } from 'sonner';
-import api from '../../api/axios';
+import api from '../../utils/api';
 import './AdminProducts.css';
 
 const AdminProducts = () => {
@@ -30,7 +30,7 @@ const AdminProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await api.get('/products?pageSize=100');
+      const { data } = await api.get('/api/products?pageSize=100');
       setProducts(data.data.products);
     } catch (error) {
       toast.error('Failed to load products');
@@ -42,7 +42,7 @@ const AdminProducts = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this product permanently?')) return;
     try {
-      await api.delete(`/products/${id}`);
+      await api.delete(`/api/products/${id}`);
       toast.success('Product removed');
       setProducts(products.filter(p => p._id !== id));
     } catch (error) {
@@ -83,11 +83,11 @@ const AdminProducts = () => {
     const loadingToast = toast.loading('Saving product...');
     try {
       if (editingProduct) {
-        await api.put(`/products/${editingProduct._id}`, formData);
+        await api.put(`/api/products/${editingProduct._id}`, formData);
         toast.dismiss(loadingToast);
         toast.success('Product updated');
       } else {
-        await api.post('/products', formData);
+        await api.post('/api/products', formData);
         toast.dismiss(loadingToast);
         toast.success('New product created');
       }

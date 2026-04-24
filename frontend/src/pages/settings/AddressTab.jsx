@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../../api/axios';
+import api from '../../utils/api';
 import { toast } from 'sonner';
 import { useAuthStore } from '../../store/authStore';
 import { MapPin, Trash2 } from 'lucide-react';
@@ -21,7 +21,7 @@ const AddressTab = ({ user }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await api.post('/users/addresses', formData);
+      const res = await api.post('/api/users/addresses', formData);
       updateUser({ addresses: res.data.data.addresses });
       toast.success('Address added successfully');
       setShowAdd(false);
@@ -36,7 +36,7 @@ const AddressTab = ({ user }) => {
   const handleDeleteAddress = async (id) => {
     if (!window.confirm('Are you sure you want to delete this address?')) return;
     try {
-      const res = await api.delete(`/users/addresses/${id}`);
+      const res = await api.delete(`/api/users/addresses/${id}`);
       updateUser({ addresses: res.data.data.addresses });
       toast.success('Address deleted');
     } catch (error) {

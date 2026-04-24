@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '../store/cartStore';
 import { useAuthStore } from '../store/authStore';
-import api from '../api/axios';
+import api from '../utils/api';
 import { toast } from 'sonner';
 import './Checkout.css';
 
@@ -40,7 +40,7 @@ const Checkout = () => {
 
     setLoading(true);
     try {
-      const res = await api.post('/orders', {
+      const res = await api.post('/api/orders', {
         orderItems: cartItems,
         shippingAddress: { address, city, postalCode, country },
         paymentMethod: 'Credit Card', // Hardcoded for internship demo
@@ -48,7 +48,7 @@ const Checkout = () => {
 
       toast.success('Order placed successfully!');
       clearCartItems();
-      await api.delete('/cart/clear'); // clear backend cart
+      await api.delete('/api/cart/clear'); // clear backend cart
       
       // Navigate to order tracking page
       navigate(`/order/${res.data.data.order._id}`);

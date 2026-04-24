@@ -19,7 +19,15 @@ ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provi
 
 ### 🔗 Live Demo
 
-<!-- Placeholder for Live Demo Link -->
+<p align="center">
+  <a href="https://shop-matrix-e-commerce-website.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20App-ShopMatrix-black?style=for-the-badge&logo=vercel&logoColor=white"/>
+  </a>
+  <br/><br/>
+  <a href="https://shopmatrix-backend.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Backend-API-gold?style=for-the-badge&logo=render&logoColor=black"/>
+  </a>
+</p>
 
 ---
 

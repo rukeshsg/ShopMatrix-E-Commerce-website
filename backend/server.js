@@ -22,7 +22,7 @@ const app = express();
 // Security Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: "https://shop-matrix-e-commerce-website.vercel.app",
   credentials: true
 }));
 

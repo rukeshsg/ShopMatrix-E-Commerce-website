@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import api from '../api/axios';
+import api from '../utils/api';
 import { useAuthStore } from './authStore';
 import { toast } from 'sonner';
 
@@ -46,7 +46,7 @@ export const useCartStore = create(
         const isAuthenticated = useAuthStore.getState().isAuthenticated;
         if (isAuthenticated) {
           try {
-            await api.post('/cart/items', { cartItems: newCartItems });
+            await api.post('/api/cart/items', { cartItems: newCartItems });
           } catch (error) {
             console.error('Failed to sync cart to backend', error);
           }
@@ -60,7 +60,7 @@ export const useCartStore = create(
         const isAuthenticated = useAuthStore.getState().isAuthenticated;
         if (isAuthenticated) {
           try {
-            await api.post('/cart/items', { cartItems: newCartItems });
+            await api.post('/api/cart/items', { cartItems: newCartItems });
           } catch (error) {
             console.error('Failed to sync cart to backend', error);
           }
@@ -84,14 +84,14 @@ export const useCartStore = create(
         if (isAuthenticated) {
            try {
              // 1. Get backend cart
-             const res = await api.get('/cart');
+             const res = await api.get('/api/cart');
              const backendCartItems = res.data.data.cart?.cartItems || [];
              
              // 2. Merge local and backend (simplified: favor local if merging after login, else favor backend)
              // For now, let's just push local to backend
              const { cartItems } = get();
              if (cartItems.length > 0) {
-               const syncRes = await api.post('/cart/items', { cartItems });
+               const syncRes = await api.post('/api/cart/items', { cartItems });
                set({ cartItems: syncRes.data.data.cart.cartItems });
              } else if (backendCartItems.length > 0) {
                set({ cartItems: backendCartItems });

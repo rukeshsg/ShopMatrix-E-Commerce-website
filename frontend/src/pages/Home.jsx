@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import api from '../api/axios';
+import api from '../utils/api';
 import ProductCard from '../components/products/ProductCard';
 import Skeleton from '../components/ui/Skeleton';
 import EmptyState from '../components/ui/EmptyState';
@@ -25,7 +25,7 @@ const Home = () => {
         const params = new URLSearchParams();
         if (keyword) params.append('keyword', keyword);
 
-        const res = await api.get(`/products?${params.toString()}`);
+        const res = await api.get(`/api/products?${params.toString()}`);
         let data = res.data.data.products;
 
         // Client-side category filter (category isn't in backend search yet)

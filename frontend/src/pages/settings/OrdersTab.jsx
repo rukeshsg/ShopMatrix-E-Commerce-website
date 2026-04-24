@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../api/axios';
+import api from '../../utils/api';
 import { Package, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -10,7 +10,7 @@ const OrdersTab = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await api.get('/orders/my');
+        const res = await api.get('/api/orders/my');
         setOrders(res.data.data.orders);
       } catch (error) {
         toast.error('Failed to fetch orders');
