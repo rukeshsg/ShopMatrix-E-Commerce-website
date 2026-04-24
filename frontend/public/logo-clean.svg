@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="400" height="480">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#e8c97a"/>
+      <stop offset="40%"  stop-color="#c9a84c"/>
+      <stop offset="70%"  stop-color="#f0d78a"/>
+      <stop offset="100%" stop-color="#b8922a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ DIAMOND SYMBOL ============ -->
+  <!-- Outer gold border (larger diamond) -->
+  <polygon
+    points="200,30 370,200 200,370 30,200"
+    fill="url(#gold)"
+  />
+  <!-- Black fill (slightly inset) -->
+  <polygon
+    points="200,52 348,200 200,348 52,200"
+    fill="#0a0a0a"
+  />
+  <!-- Inner gold border line -->
+  <polygon
+    points="200,70 330,200 200,330 70,200"
+    fill="none"
+    stroke="url(#gold)"
+    stroke-width="3"
+  />
+
+  <!-- Gold "S" letter centered in diamond -->
+  <text
+    x="200"
+    y="230"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="155"
+    font-weight="700"
+    fill="url(#gold)"
+    letter-spacing="0"
+  >S</text>
+
+  <!-- ============ TEXT STRIP ============ -->
+  <!-- Black background strip — clean rectangle with slight rounding -->
+  <rect
+    x="20"
+    y="396"
+    width="360"
+    height="62"
+    rx="5"
+    ry="5"
+    fill="#0a0a0a"
+  />
+  <!-- SHOPMATRIX text in gold -->
+  <text
+    x="200"
+    y="438"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="30"
+    font-weight="700"
+    fill="url(#gold)"
+    letter-spacing="6"
+  >SHOPMATRIX</text>
+</svg>
