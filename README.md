@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ShopMatrix 💎
 
 ShopMatrix is a premium, full-stack luxury e-commerce platform designed to provide a seamless and elegant shopping experience. Built with the **MERN Stack**, it features a sophisticated UI, secure authentication, and robust product management.
@@ -145,3 +146,7 @@ npm run seed
 ---
 
 Made with ❤️ by [Your Name]
+=======
+# ShopMatrix-E-Commerce-website-
+ShopMatrix is a professional, full-stack luxury e-commerce platform built with the MERN stack. Features include secure JWT authentication, a dynamic product catalog with search/filtering, shopping cart management, user settings dashboard, and a premium, responsive UI/UX.
+>>>>>>> ed4edca5dacb877804bf5ea2798109898d616e20
