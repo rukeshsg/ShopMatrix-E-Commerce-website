@@ -151,3 +151,8 @@ To test the administrative features:
 ---
 
 Made with ❤️ by [Rukesh S G]
+
+**## Note
+
+Developed to demonstrate full-stack engineering skills by building a modern, scalable, and production-ready e-commerce application using the MERN stack. I have tried my best to make it look premium and user-friendly.
+Built with the assistance of AI tools for faster development, better problem-solving, and improved code optimization while maintaining full understanding of the system.**
